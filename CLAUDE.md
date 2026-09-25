@@ -2,14 +2,15 @@
 
 ## Проект
 Мобильное приложение (iOS + Android): персональный AI-тренер — калибровка, цели, база упражнений, готовые и свои тренировки, пошаговый плеер тренировки, оценка, AI-генерация следующей тренировки.
+Личное приложение для 2 пользователей, без публикации в магазины и без монетизации.
 **Полная спецификация — `SPEC.md`. Это источник правды. Не добавляй функции, которых там нет.**
 
 ## Стек
-- React Native + Expo, TypeScript (strict), Expo Router
-- NativeWind, Zustand, TanStack Query, MMKV (офлайн)
-- Supabase: Auth, Postgres + RLS, Storage, Edge Functions
+- React Native + Expo, TypeScript (strict), Expo Router — запуск только в Expo Go (без dev build), зависимости только совместимые с Expo Go
+- NativeWind, Zustand, TanStack Query, AsyncStorage (офлайн)
+- Supabase: Auth (email + пароль), Postgres + RLS, Storage, Edge Functions
 - Claude API — только из Edge Function (`supabase/functions/`), модель из `ANTHROPIC_MODEL`
-- i18next (ru — основной, en), Jest + RNTL, EAS Build
+- i18next (ru — основной, en), Jest + RNTL
 
 ## Структура
 ```
