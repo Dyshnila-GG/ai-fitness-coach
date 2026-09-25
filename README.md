@@ -73,28 +73,23 @@ set encrypted_password = extensions.crypt('новый_пароль', extensions.
 where email = 'you@example.com';
 ```
 
-### 2. Применить миграции (создать таблицы) в облаке
+### 2. Применить миграции и seed в облаке (SQL Editor)
 
-Команды выполняются в терминале из папки проекта.
+Миграции применяются вручную, без `supabase db push`.
 
-1. Войти в Supabase CLI (откроется браузер для подтверждения):
-   ```bash
-   npx supabase login
-   ```
-2. Связать папку проекта с облачным проектом:
-   ```bash
-   npx supabase link --project-ref <project-ref>
-   ```
-   - `<project-ref>` — идентификатор проекта: это часть адреса в браузере `https://supabase.com/dashboard/project/<project-ref>` (набор букв, например `abcdefghijklmnop`). Он же есть в **Project Settings → General → Project ID**.
-   - CLI спросит **пароль базы данных** — тот, что задавали при создании проекта. Забыли — сбросьте в **Project Settings → Database → Reset database password**.
-3. Отправить миграции в облако:
-   ```bash
-   npx supabase db push
-   ```
-   CLI покажет список миграций и попросит подтвердить — введите `Y`.
-4. Проверка: в Dashboard откройте **Table Editor** — должны появиться таблицы `profiles`, `user_goals`, `user_limitations`, `body_metrics`.
+1. Dashboard → **SQL Editor** → **New query**.
+2. Откройте в проекте нужный файл, скопируйте всё содержимое в редактор, нажмите **Run**.
+3. Порядок: сначала файлы из `supabase/migrations/` по возрастанию имени (имя начинается с даты), затем файлы из `supabase/seed/`.
+4. Каждую миграцию выполняйте **один раз**. Seed можно запускать повторно — он обновит данные.
+5. Какие файлы выполнить после очередного этапа — указано в отчёте этапа (и в описании Pull Request).
 
-Важно: не меняйте таблицы вручную в облаке (через Table Editor или SQL Editor) — только через файлы миграций, иначе `db push` начнёт выдавать ошибки.
+Текущий полный список (для нового проекта):
+
+| #   | Файл                                              | Что создаёт                                                  |
+| --- | ------------------------------------------------- | ------------------------------------------------------------ |
+| 1   | `supabase/migrations/20260925120000_profiles.sql` | `profiles`, `user_goals`, `user_limitations`, `body_metrics` |
+
+Проверка: **Table Editor** — таблицы на месте.
 
 ## Структура
 
