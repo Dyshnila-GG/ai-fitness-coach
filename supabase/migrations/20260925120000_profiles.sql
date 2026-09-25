@@ -20,7 +20,7 @@ create table public.profiles (
   birth_date date not null check (birth_date > date '1900-01-01'),
   height_cm numeric(4, 1) not null check (height_cm between 100 and 250),
   height_unit text not null default 'cm' check (height_unit in ('cm', 'ft_in')),
-  weight_kg numeric(4, 1) not null check (weight_kg between 30 and 300),
+  weight_kg numeric(5, 2) not null check (weight_kg between 30 and 300),
   weight_unit text not null default 'kg' check (weight_unit in ('kg', 'lb')),
   level text not null check (level in ('beginner', 'intermediate', 'advanced')),
   locations text[] not null check (
@@ -127,7 +127,7 @@ create table public.body_metrics (
   id bigint generated always as identity primary key,
   user_id uuid not null default auth.uid() references auth.users (id) on delete cascade,
   measured_at date not null default current_date,
-  weight_kg numeric(4, 1) check (weight_kg between 30 and 300),
+  weight_kg numeric(5, 2) check (weight_kg between 30 and 300),
   body_fat_pct numeric(3, 1) check (body_fat_pct between 3 and 60),
   chest_cm numeric(4, 1) check (chest_cm between 50 and 200),
   waist_cm numeric(4, 1) check (waist_cm between 40 and 200),

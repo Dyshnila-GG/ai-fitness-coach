@@ -242,6 +242,16 @@ otp_expiry = 3600
 # admin_email = "admin@email.com"
 # sender_name = "Admin"
 
+# Sign-in by 6-digit code (OTP): both templates must contain {{ .Token }}.
+# "confirmation" is sent to new users when email confirmations are on, "magic_link" otherwise.
+[auth.email.template.magic_link]
+subject = "Код для входа / Sign-in code"
+content_path = "./supabase/templates/otp.html"
+
+[auth.email.template.confirmation]
+subject = "Код для входа / Sign-in code"
+content_path = "./supabase/templates/otp.html"
+
 # Uncomment to customize email template
 # [auth.email.template.invite]
 # subject = "You have been invited"

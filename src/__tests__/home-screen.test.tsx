@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react-native';
 
 import '@/i18n';
 
-import HomeScreen from '../../app/index';
+import HomeScreen from '../../app/(app)/index';
 
 jest.mock('expo-localization', () => ({
   getLocales: () => [{ languageCode: 'ru' }],

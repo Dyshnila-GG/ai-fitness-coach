@@ -1,9 +1,182 @@
 {
   "common": {
-    "appName": "AI Fitness Coach"
+    "appName": "AI Fitness Coach",
+    "next": "Next",
+    "back": "Back",
+    "skip": "Skip",
+    "save": "Save",
+    "done": "Done",
+    "retry": "Retry",
+    "notSet": "Not set"
   },
   "home": {
     "title": "AI Fitness Coach",
-    "subtitle": "Your personal AI coach"
+    "subtitle": "Your personal AI coach",
+    "profile": "Profile"
+  },
+  "auth": {
+    "signIn": {
+      "title": "Sign in",
+      "subtitle": "Enter your email and we'll send a 6-digit code. No password needed.",
+      "emailLabel": "Email",
+      "emailPlaceholder": "you@example.com",
+      "submit": "Get code",
+      "invalidEmail": "Check your email"
+    },
+    "verify": {
+      "title": "Enter the code",
+      "subtitle": "We sent a 6-digit code to {{email}}",
+      "codeLabel": "Code from the email",
+      "submit": "Sign in",
+      "resend": "Resend code",
+      "resendIn": "Resend in {{seconds}} s",
+      "resent": "New code sent",
+      "changeEmail": "Change email"
+    },
+    "errors": {
+      "rateLimit": "Too many attempts. Please wait a bit and try again.",
+      "invalidCode": "Invalid or expired code",
+      "network": "Can't reach the server",
+      "unknown": "Something went wrong. Please try again."
+    }
+  },
+  "access": {
+    "errorTitle": "Couldn't load your profile",
+    "errorText": "Check your internet connection."
+  },
+  "onboarding": {
+    "progress": "Step {{current}} of {{total}}",
+    "finish": "Done",
+    "saveError": "Couldn't save. Check your connection and try again.",
+    "invalid": "Please check your answers: some fields are invalid.",
+    "disclaimer": {
+      "title": "Important",
+      "text": "This app does not provide medical advice. If you have pain, injuries or medical conditions, consult a doctor before training. Stop an exercise if it hurts.",
+      "accept": "I understand and accept"
+    },
+    "sex": { "title": "Your sex" },
+    "birthDate": {
+      "title": "Date of birth",
+      "subtitle": "The app is for ages 16 to 80",
+      "pick": "Pick a date",
+      "age": "Age: {{age}}",
+      "invalid": "Age must be between 16 and 80"
+    },
+    "height": { "title": "Your height" },
+    "weight": { "title": "Your weight" },
+    "level": { "title": "Experience level" },
+    "locations": { "title": "Where do you train?", "subtitle": "Choose all that apply" },
+    "equipment": {
+      "title": "What equipment do you have?",
+      "subtitle": "For training at home or outdoors"
+    },
+    "days": { "title": "How many days a week?", "unit": "workouts per week" },
+    "mode": { "title": "Workout mode" },
+    "cardio": { "title": "Cardio" },
+    "goals": {
+      "title": "Your goals",
+      "subtitle": "One main goal and, optionally, one additional",
+      "primary": "Main",
+      "secondary": "Extra"
+    },
+    "limitations": {
+      "title": "Any limitations?",
+      "subtitle": "Mark the areas that bother you. We'll pick exercises accordingly.",
+      "noteLabel": "What is uncomfortable to do",
+      "notePlaceholder": "E.g. deep squats hurt"
+    },
+    "metrics": {
+      "title": "Measurements",
+      "subtitle": "Optional. Helps track your progress."
+    }
+  },
+  "fields": {
+    "sex": "Sex",
+    "birthDate": "Date of birth",
+    "height": "Height",
+    "weight": "Weight",
+    "level": "Level",
+    "locations": "Where you train",
+    "equipment": "Equipment",
+    "days": "Days per week",
+    "mode": "Mode",
+    "cardio": "Cardio",
+    "goals": "Goals",
+    "limitations": "Limitations",
+    "metrics": "Measurements",
+    "bodyFat": "Body fat",
+    "chest": "Chest",
+    "waist": "Waist",
+    "hips": "Hips",
+    "biceps": "Biceps",
+    "feet": "Feet",
+    "inches": "Inches"
+  },
+  "options": {
+    "sex": { "male": "Male", "female": "Female" },
+    "level": {
+      "beginner": "Beginner",
+      "beginnerHint": "Training for less than 6 months",
+      "intermediate": "Intermediate",
+      "intermediateHint": "6 months to 2 years",
+      "advanced": "Advanced",
+      "advancedHint": "More than 2 years"
+    },
+    "locations": { "gym": "Gym", "home": "Home", "outdoor": "Outdoors" },
+    "equipment": {
+      "dumbbells": "Dumbbells",
+      "barbell": "Barbell",
+      "kettlebells": "Kettlebells",
+      "pull_up_bar": "Pull-up bar",
+      "dip_bars": "Dip bars",
+      "bands": "Resistance bands",
+      "bench": "Bench",
+      "none": "Nothing"
+    },
+    "mode": {
+      "light": "Light",
+      "lightHint": "~50 minutes, 4–5 exercises",
+      "hard": "Hard",
+      "hardHint": "90–120 minutes, 6–8 exercises",
+      "mixed": "Mixed",
+      "mixedHint": "Alternate Light and Hard"
+    },
+    "cardio": { "warmup": "At the start (warm-up)", "end": "At the end", "none": "Not needed" },
+    "goals": {
+      "muscle_gain": "Build muscle",
+      "strength": "Strength",
+      "fat_loss": "Fat loss / definition",
+      "recomposition": "Recomposition",
+      "endurance": "Endurance",
+      "general_fitness": "General fitness and health",
+      "mobility": "Mobility and healthy back"
+    },
+    "zones": {
+      "neck": "Neck",
+      "shoulders": "Shoulders",
+      "elbows": "Elbows",
+      "wrists": "Wrists",
+      "lower_back": "Lower back",
+      "knees": "Knees",
+      "ankles": "Ankles"
+    }
+  },
+  "units": {
+    "cm": "cm",
+    "ftIn": "ft/in",
+    "ft": "ft",
+    "in": "in",
+    "kg": "kg",
+    "lb": "lb",
+    "pct": "%"
+  },
+  "validation": {
+    "range": "Allowed from {{min}} to {{max}}"
+  },
+  "profile": {
+    "title": "Profile",
+    "signOut": "Sign out",
+    "edit": "Edit",
+    "saveError": "Couldn't save changes"
   }
 }
