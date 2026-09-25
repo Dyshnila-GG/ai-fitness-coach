@@ -1,6 +1,6 @@
 import { AuthApiError } from '@supabase/supabase-js';
 
-import { isValidEmail, normalizeEmail } from '../email';
+import { isValidEmail, isValidPassword, normalizeEmail } from '../email';
 import { authErrorKey } from '../errors';
 
 describe('email', () => {
@@ -12,15 +12,25 @@ describe('email', () => {
   });
 });
 
+describe('password', () => {
+  it('requires at least 6 characters', () => {
+    expect(isValidPassword('12345')).toBe(false);
+    expect(isValidPassword('123456')).toBe(true);
+  });
+});
+
 describe('authErrorKey', () => {
   it('maps rate limits', () => {
-    expect(authErrorKey(new AuthApiError('x', 429, 'over_email_send_rate_limit'))).toBe(
-      'rateLimit',
-    );
+    expect(authErrorKey(new AuthApiError('x', 429, 'over_request_rate_limit'))).toBe('rateLimit');
   });
 
-  it('maps invalid codes', () => {
-    expect(authErrorKey(new AuthApiError('x', 403, 'otp_expired'))).toBe('invalidCode');
+  it('maps credential and sign-up errors', () => {
+    expect(authErrorKey(new AuthApiError('x', 400, 'invalid_credentials'))).toBe(
+      'invalidCredentials',
+    );
+    expect(authErrorKey(new AuthApiError('x', 422, 'user_already_exists'))).toBe('userExists');
+    expect(authErrorKey(new AuthApiError('x', 422, 'email_exists'))).toBe('userExists');
+    expect(authErrorKey(new AuthApiError('x', 422, 'weak_password'))).toBe('weakPassword');
   });
 
   it('maps network and unknown errors', () => {

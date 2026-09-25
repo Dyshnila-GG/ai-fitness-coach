@@ -57,7 +57,7 @@ function RootNavigator() {
       </Stack.Protected>
       <Stack.Protected guard={access === 'auth' || access === 'loading'}>
         <Stack.Screen name="sign-in" />
-        <Stack.Screen name="verify" />
+        <Stack.Screen name="sign-up" />
       </Stack.Protected>
     </Stack>
   );

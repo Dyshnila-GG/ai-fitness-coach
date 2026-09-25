@@ -10,6 +10,9 @@ export function isValidEmail(input: string): boolean {
   return emailSchema.safeParse(normalizeEmail(input)).success;
 }
 
-export const OTP_LENGTH = 6;
-/** Supabase allows one OTP email per address every 60 s. */
-export const RESEND_COOLDOWN_SEC = 60;
+/** Must match `minimum_password_length` in supabase/config.toml. */
+export const MIN_PASSWORD_LENGTH = 6;
+
+export function isValidPassword(input: string): boolean {
+  return input.length >= MIN_PASSWORD_LENGTH;
+}
