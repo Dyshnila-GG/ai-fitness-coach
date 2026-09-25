@@ -27,8 +27,9 @@ supabase/functions/  # Edge Functions (AI)
 ## Команды
 - `npx expo start` — запуск
 - `npm test` — тесты
-- `npm run lint` / `npm run typecheck`
-- `supabase db reset` — миграции + seed локально
+- `npm run lint` / `npm run typecheck` / `npm run format`
+- `npx supabase start` — локальный Supabase (Docker)
+- `npx supabase db reset` — миграции + seed локально
 (Обнови этот раздел, когда команды появятся/изменятся.)
 
 ## Правила работы
