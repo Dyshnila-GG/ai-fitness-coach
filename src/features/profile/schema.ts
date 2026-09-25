@@ -23,7 +23,7 @@ import {
 
 import type { ProfileDraft } from './types';
 
-const round = (step: number) => (v: number) => Math.round(v / step) * step;
+const round = (decimals: number) => (v: number) => Number(v.toFixed(decimals));
 const range = (r: { min: number; max: number }) => z.number().min(r.min).max(r.max);
 const optionalRange = (r: { min: number; max: number }) => range(r).nullable();
 
@@ -33,9 +33,9 @@ export const savePayloadSchema = z
     disclaimer_accepted: z.literal(true),
     sex: z.enum(SEXES),
     birth_date: z.iso.date(),
-    height_cm: range(HEIGHT_CM).transform(round(0.1)),
+    height_cm: range(HEIGHT_CM).transform(round(1)),
     height_unit: z.enum(HEIGHT_UNITS),
-    weight_kg: range(WEIGHT_KG).transform(round(0.01)),
+    weight_kg: range(WEIGHT_KG).transform(round(2)),
     weight_unit: z.enum(WEIGHT_UNITS),
     level: z.enum(LEVELS),
     locations: z.array(z.enum(LOCATIONS)).min(1),

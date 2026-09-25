@@ -10,6 +10,7 @@ type Props = {
   decimals?: number;
   error?: string | null;
   testID?: string;
+  className?: string;
 };
 
 function format(value: number | null, decimals: number): string {
@@ -33,6 +34,7 @@ export function NumberField({
   decimals = 1,
   error,
   testID,
+  className,
 }: Props) {
   const [text, setText] = useState(() => format(value, decimals));
   const [lastValue, setLastValue] = useState(value);
@@ -46,6 +48,7 @@ export function NumberField({
   return (
     <TextField
       testID={testID}
+      className={className}
       label={label}
       value={text}
       suffix={suffix}
