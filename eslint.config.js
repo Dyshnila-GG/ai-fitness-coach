@@ -8,7 +8,7 @@ module.exports = defineConfig([
   prettierConfig,
   {
     // Tests re-require modules after changing process.env.
-    files: ['**/__tests__/**'],
+    files: ['**/__tests__/**', 'jest.setup.ts'],
     rules: { '@typescript-eslint/no-require-imports': 'off' },
   },
   {
