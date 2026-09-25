@@ -7,6 +7,11 @@ module.exports = defineConfig([
   expoConfig,
   prettierConfig,
   {
+    // Tests re-require modules after changing process.env.
+    files: ['**/__tests__/**'],
+    rules: { '@typescript-eslint/no-require-imports': 'off' },
+  },
+  {
     ignores: ['dist/*', '.expo/*', 'coverage/*', 'supabase/functions/*', 'expo-env.d.ts'],
   },
 ]);
