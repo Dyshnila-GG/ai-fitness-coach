@@ -85,11 +85,19 @@ where email = 'you@example.com';
 
 Текущий полный список (для нового проекта):
 
-| #   | Файл                                              | Что создаёт                                                  |
-| --- | ------------------------------------------------- | ------------------------------------------------------------ |
-| 1   | `supabase/migrations/20260925120000_profiles.sql` | `profiles`, `user_goals`, `user_limitations`, `body_metrics` |
+| #   | Файл                                               | Что создаёт                                                  |
+| --- | -------------------------------------------------- | ------------------------------------------------------------ |
+| 1   | `supabase/migrations/20260925120000_profiles.sql`  | `profiles`, `user_goals`, `user_limitations`, `body_metrics` |
+| 2   | `supabase/migrations/20260926120000_exercises.sql` | `exercises`, `exercise_alternatives`                         |
+| 3   | `supabase/seed/exercises.sql`                      | 64 упражнения и альтернативы (можно запускать повторно)      |
 
-Проверка: **Table Editor** — таблицы на месте.
+Проверка: **Table Editor** — таблицы на месте, в `exercises` 64 строки.
+
+SQL Editor может предупредить о «destructive operation» при запуске seed (он пересоздаёт список альтернатив) — это ожидаемо, подтвердите запуск.
+
+## Источник медиа упражнений
+
+Кадры упражнений (2 кадра: начало и конец движения, в карточке чередуются как анимация) — из открытой базы [free-exercise-db](https://github.com/yuhonas/free-exercise-db), лицензия [Unlicense](https://github.com/yuhonas/free-exercise-db/blob/main/LICENSE.md) (public domain). Картинки не копируются в репозиторий: `media_urls` в `supabase/seed/exercises.sql` ссылаются на `raw.githubusercontent.com`, закреплённый на коммит `a859101`. Для упражнений без соответствия в базе показывается плейсхолдер.
 
 ## Структура
 

@@ -76,7 +76,7 @@
 
 **Принцип:** 5–10 самых продуктивных упражнений на группу, у каждого — альтернативы с другим инвентарём (свободный вес ↔ тренажёр ↔ свой вес).
 
-**Поля упражнения:** `id`, `name_ru`, `name_en`, `primary_muscles[]`, `secondary_muscles[]`, `equipment` (barbell, dumbbell, machine, cable, smith, bodyweight, kettlebell, band), `pattern` (push_h, push_v, pull_h, pull_v, squat, hinge, lunge, isolation, core, cardio, mobility), `difficulty` (1–3), `is_compound`, `is_unilateral`, `default_tempo`, `instructions[]` (3–6 шагов), `mistakes[]`, `contraindications[]` (зоны из калибровки), `media_url` (GIF), `alternatives[]`.
+**Поля упражнения:** `id`, `name_ru`, `name_en`, `primary_muscles[]`, `secondary_muscles[]`, `equipment` (barbell, dumbbell, machine, cable, smith, bodyweight, kettlebell, band), `pattern` (push_h, push_v, pull_h, pull_v, squat, hinge, lunge, isolation, core, cardio, mobility), `difficulty` (1–3), `is_compound`, `is_unilateral`, `default_tempo`, `instructions[]` (3–6 шагов), `mistakes[]`, `contraindications[]` (зоны из калибровки), `media_urls[]` (2 кадра: начало/конец движения), `alternatives[]`.
 
 **Замена:** кнопка «Заменить» → список альтернатив с тем же `pattern` и мышцей; фильтр «свободный вес / тренажёр / свой вес».
 
@@ -93,7 +93,7 @@
 - **Кор:** планка, боковая планка, подъём ног в висе, скручивания на блоке, ролик, dead bug, Pallof press.
 - **Кардио / разминка:** беговая дорожка, велотренажёр, гребной, скакалка, суставная разминка (комплекс 5 мин).
 
-**Медиа:** GIF нельзя брать из интернета без лицензии. MVP — поле `media_url` + плейсхолдер; источник (лицензированный датасет, напр. ExerciseDB по лицензии, или свои анимации) — открытый вопрос (раздел 15).
+**Медиа:** GIF нельзя брать из интернета без лицензии. Источник — [free-exercise-db](https://github.com/yuhonas/free-exercise-db) (Unlicense): 2 кадра на упражнение, в карточке чередуются ~0,8 с как анимация; нет соответствия — плейсхолдер.
 
 ## 7. Тренировки
 
@@ -215,14 +215,14 @@ Push = жимы «от себя» (грудь, плечи, трицепс). Pull
 
 ## 15. Открытые вопросы
 
-- Источник GIF / анимаций упражнений и их лицензия — **блокирует релиз, не блокирует разработку**.
+- ~~Источник GIF / анимаций упражнений и их лицензия~~ — решено: free-exercise-db (Unlicense), см. раздел 6.
 - Название приложения и бренд.
 
 ## Статус этапов
 
 - [x] 0 Каркас
 - [x] 1 Авторизация + онбординг
-- [ ] 2 База упражнений
+- [x] 2 База упражнений
 - [ ] 3 Программы и конструктор
 - [ ] 4 Плеер тренировки
 - [ ] 5 Оценка после тренировки
