@@ -1,0 +1,10 @@
+node_modules
+.expo
+dist
+coverage
+package-lock.json
+ios
+android
+assets/expo.icon
+CLAUDE.md
+SPEC.md
