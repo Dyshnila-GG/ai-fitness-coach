@@ -14,6 +14,7 @@ export default function HomeScreen() {
         <Text className="text-2xl font-bold text-foreground">{t('home.title')}</Text>
         <Text className="mt-2 text-base text-muted">{t('home.subtitle')}</Text>
       </View>
+      <Button title={t('home.exercises')} onPress={() => router.push('/exercises')} />
       <Button
         variant="secondary"
         title={t('home.profile')}

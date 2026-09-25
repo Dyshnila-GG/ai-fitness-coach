@@ -12,7 +12,8 @@
   "home": {
     "title": "AI Fitness Coach",
     "subtitle": "Your personal AI coach",
-    "profile": "Profile"
+    "profile": "Profile",
+    "exercises": "Exercises"
   },
   "auth": {
     "emailLabel": "Email",
@@ -57,7 +58,9 @@
       "text": "This app does not provide medical advice. If you have pain, injuries or medical conditions, consult a doctor before training. Stop an exercise if it hurts.",
       "accept": "I understand and accept"
     },
-    "sex": { "title": "Your sex" },
+    "sex": {
+      "title": "Your sex"
+    },
     "birthDate": {
       "title": "Date of birth",
       "subtitle": "The app is for ages 16 to 80",
@@ -65,17 +68,33 @@
       "age": "Age: {{age}}",
       "invalid": "Age must be between 16 and 80"
     },
-    "height": { "title": "Your height" },
-    "weight": { "title": "Your weight" },
-    "level": { "title": "Experience level" },
-    "locations": { "title": "Where do you train?", "subtitle": "Choose all that apply" },
+    "height": {
+      "title": "Your height"
+    },
+    "weight": {
+      "title": "Your weight"
+    },
+    "level": {
+      "title": "Experience level"
+    },
+    "locations": {
+      "title": "Where do you train?",
+      "subtitle": "Choose all that apply"
+    },
     "equipment": {
       "title": "What equipment do you have?",
       "subtitle": "For training at home or outdoors"
     },
-    "days": { "title": "How many days a week?", "unit": "workouts per week" },
-    "mode": { "title": "Workout mode" },
-    "cardio": { "title": "Cardio" },
+    "days": {
+      "title": "How many days a week?",
+      "unit": "workouts per week"
+    },
+    "mode": {
+      "title": "Workout mode"
+    },
+    "cardio": {
+      "title": "Cardio"
+    },
     "goals": {
       "title": "Your goals",
       "subtitle": "One main goal and, optionally, one additional",
@@ -116,7 +135,10 @@
     "inches": "Inches"
   },
   "options": {
-    "sex": { "male": "Male", "female": "Female" },
+    "sex": {
+      "male": "Male",
+      "female": "Female"
+    },
     "level": {
       "beginner": "Beginner",
       "beginnerHint": "Training for less than 6 months",
@@ -125,7 +147,11 @@
       "advanced": "Advanced",
       "advancedHint": "More than 2 years"
     },
-    "locations": { "gym": "Gym", "home": "Home", "outdoor": "Outdoors" },
+    "locations": {
+      "gym": "Gym",
+      "home": "Home",
+      "outdoor": "Outdoors"
+    },
     "equipment": {
       "dumbbells": "Dumbbells",
       "barbell": "Barbell",
@@ -144,7 +170,11 @@
       "mixed": "Mixed",
       "mixedHint": "Alternate Light and Hard"
     },
-    "cardio": { "warmup": "At the start (warm-up)", "end": "At the end", "none": "Not needed" },
+    "cardio": {
+      "warmup": "At the start (warm-up)",
+      "end": "At the end",
+      "none": "Not needed"
+    },
     "goals": {
       "muscle_gain": "Build muscle",
       "strength": "Strength",
@@ -181,5 +211,66 @@
     "signOut": "Sign out",
     "edit": "Edit",
     "saveError": "Couldn't save changes"
+  },
+  "exercises": {
+    "title": "Exercises",
+    "search": "Search exercises",
+    "allMuscles": "All muscles",
+    "anyEquipment": "Any equipment",
+    "empty": "Nothing found",
+    "loadError": "Couldn't load exercises. Check your connection.",
+    "notFound": "Exercise not found",
+    "noMedia": "No animation yet",
+    "primaryMuscles": "Primary muscles",
+    "secondaryMuscles": "Secondary",
+    "equipmentLabel": "Equipment",
+    "type": "Type",
+    "compound": "Compound",
+    "isolation": "Isolation",
+    "unilateral": "Performed one side at a time",
+    "difficulty": "Difficulty",
+    "difficultyLevels": {
+      "1": "Easy",
+      "2": "Medium",
+      "3": "Hard"
+    },
+    "tempo": "Tempo",
+    "howTo": "How to",
+    "mistakes": "Common mistakes",
+    "contraindications": "Take care with",
+    "replace": "Replace",
+    "replaceTitle": "Replace",
+    "replaceSubtitle": "Alternatives for “{{name}}”",
+    "noAlternatives": "No alternatives with this equipment",
+    "muscles": {
+      "chest": "Chest",
+      "back": "Back",
+      "lower_back": "Lower back",
+      "shoulders": "Shoulders",
+      "biceps": "Biceps",
+      "triceps": "Triceps",
+      "forearms": "Forearms",
+      "quads": "Quads",
+      "hamstrings": "Hamstrings",
+      "glutes": "Glutes",
+      "calves": "Calves",
+      "core": "Core",
+      "full_body": "Full body"
+    },
+    "equipment": {
+      "barbell": "Barbell",
+      "dumbbell": "Dumbbells",
+      "machine": "Machine",
+      "cable": "Cable",
+      "smith": "Smith machine",
+      "bodyweight": "Bodyweight",
+      "kettlebell": "Kettlebell",
+      "band": "Band"
+    },
+    "categories": {
+      "free_weight": "Free weight",
+      "machine": "Machine",
+      "bodyweight": "Bodyweight"
+    }
   }
 }

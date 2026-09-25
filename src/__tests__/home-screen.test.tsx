@@ -23,4 +23,10 @@ describe('HomeScreen', () => {
     await fireEvent.press(screen.getByText('Профиль'));
     expect(mockPush).toHaveBeenCalledWith('/profile');
   });
+
+  it('opens the exercise library', async () => {
+    await render(<HomeScreen />);
+    await fireEvent.press(screen.getByText('Упражнения'));
+    expect(mockPush).toHaveBeenCalledWith('/exercises');
+  });
 });
