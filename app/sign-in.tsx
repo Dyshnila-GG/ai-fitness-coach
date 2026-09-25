@@ -14,58 +14,79 @@ export default function SignInScreen() {
   const { t } = useTranslation();
   const router = useRouter();
   const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [emailError, setEmailError] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
   const submit = async () => {
     if (!isValidEmail(email)) {
-      setError(t('auth.signIn.invalidEmail'));
+      setEmailError(t('auth.invalidEmail'));
       return;
     }
-    const normalized = normalizeEmail(email);
     setLoading(true);
     setError(null);
-    const { error: otpError } = await supabase.auth.signInWithOtp({
-      email: normalized,
-      options: { shouldCreateUser: true },
+    const { error: signInError } = await supabase.auth.signInWithPassword({
+      email: normalizeEmail(email),
+      password,
     });
     setLoading(false);
-    if (otpError) {
-      setError(t(`auth.errors.${authErrorKey(otpError)}`));
-      return;
-    }
-    router.push({ pathname: '/verify', params: { email: normalized } });
+    // On success the auth listener switches the navigator to onboarding or home.
+    if (signInError) setError(t(`auth.errors.${authErrorKey(signInError)}`));
   };
 
   return (
     <Screen
       footer={
-        <Button
-          testID="sign-in-submit"
-          title={t('auth.signIn.submit')}
-          onPress={() => void submit()}
-          loading={loading}
-          disabled={email.trim() === ''}
-        />
+        <>
+          <Button
+            testID="sign-in-submit"
+            title={t('auth.signIn.submit')}
+            onPress={() => void submit()}
+            loading={loading}
+            disabled={email.trim() === '' || password === ''}
+          />
+          <Button
+            variant="ghost"
+            title={t('auth.signIn.toSignUp')}
+            onPress={() => router.push('/sign-up')}
+          />
+        </>
       }
     >
       <Text className="mt-10 text-3xl font-bold text-foreground">{t('auth.signIn.title')}</Text>
       <Text className="text-base text-muted">{t('auth.signIn.subtitle')}</Text>
       <TextField
-        label={t('auth.signIn.emailLabel')}
-        placeholder={t('auth.signIn.emailPlaceholder')}
+        label={t('auth.emailLabel')}
+        placeholder={t('auth.emailPlaceholder')}
         value={email}
         onChangeText={(value) => {
           setEmail(value);
+          setEmailError(null);
           setError(null);
         }}
-        error={error}
+        error={emailError}
         autoCapitalize="none"
         autoComplete="email"
         autoCorrect={false}
         keyboardType="email-address"
         textContentType="emailAddress"
-        returnKeyType="send"
+        returnKeyType="next"
+      />
+      <TextField
+        label={t('auth.passwordLabel')}
+        value={password}
+        onChangeText={(value) => {
+          setPassword(value);
+          setError(null);
+        }}
+        error={error}
+        secureTextEntry
+        autoCapitalize="none"
+        autoComplete="current-password"
+        autoCorrect={false}
+        textContentType="password"
+        returnKeyType="go"
         onSubmitEditing={() => void submit()}
       />
     </Screen>

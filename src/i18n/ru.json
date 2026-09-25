@@ -15,27 +15,30 @@
     "profile": "Профиль"
   },
   "auth": {
+    "emailLabel": "Email",
+    "emailPlaceholder": "you@example.com",
+    "passwordLabel": "Пароль",
+    "invalidEmail": "Проверьте email",
     "signIn": {
       "title": "Вход",
-      "subtitle": "Введите email — пришлём 6-значный код. Пароль не нужен.",
-      "emailLabel": "Email",
-      "emailPlaceholder": "you@example.com",
-      "submit": "Получить код",
-      "invalidEmail": "Проверьте email"
-    },
-    "verify": {
-      "title": "Введите код",
-      "subtitle": "Отправили 6-значный код на {{email}}",
-      "codeLabel": "Код из письма",
+      "subtitle": "Введите email и пароль.",
       "submit": "Войти",
-      "resend": "Отправить код ещё раз",
-      "resendIn": "Повторно через {{seconds}} с",
-      "resent": "Новый код отправлен",
-      "changeEmail": "Изменить email"
+      "toSignUp": "Нет аккаунта? Регистрация"
+    },
+    "signUp": {
+      "title": "Регистрация",
+      "subtitle": "Придумайте пароль — минимум {{min}} символов.",
+      "confirmLabel": "Повторите пароль",
+      "submit": "Зарегистрироваться",
+      "toSignIn": "Уже есть аккаунт? Войти",
+      "passwordTooShort": "Минимум {{min}} символов",
+      "passwordMismatch": "Пароли не совпадают"
     },
     "errors": {
       "rateLimit": "Слишком много попыток. Подождите немного и попробуйте снова.",
-      "invalidCode": "Неверный или просроченный код",
+      "invalidCredentials": "Неверный email или пароль",
+      "userExists": "Аккаунт с таким email уже есть — войдите",
+      "weakPassword": "Слишком простой пароль",
       "network": "Нет соединения с сервером",
       "unknown": "Что-то пошло не так. Попробуйте ещё раз."
     }
