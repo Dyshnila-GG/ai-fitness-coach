@@ -1,0 +1,9 @@
+{
+  "common": {
+    "appName": "AI Fitness Coach"
+  },
+  "home": {
+    "title": "AI Fitness Coach",
+    "subtitle": "Персональный AI-тренер"
+  }
+}

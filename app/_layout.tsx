@@ -1,4 +1,5 @@
 import '../global.css';
+import '@/i18n';
 
 import { DarkTheme, ThemeProvider } from 'expo-router';
 import { Stack } from 'expo-router/stack';
