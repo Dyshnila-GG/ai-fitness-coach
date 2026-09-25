@@ -61,7 +61,7 @@ select is(
 select is((select count(*) from public.body_metrics), 1::bigint, 'one metrics row per day');
 
 select throws_ok(
-  $$ update public.profiles set is_premium = true $$, '42501', null, 'is_premium not writable'
+  $$ update public.profiles set created_at = now() $$, '42501', null, 'created_at not writable'
 );
 select throws_ok(
   $$ insert into public.user_goals (goal, priority) values ('endurance', 3) $$,

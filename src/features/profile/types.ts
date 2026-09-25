@@ -27,7 +27,6 @@ export type ProfileRow = {
   days_per_week: number;
   training_mode: TrainingMode;
   cardio: Cardio;
-  is_premium: boolean;
   disclaimer_accepted_at: string;
   onboarding_completed_at: string | null;
 };

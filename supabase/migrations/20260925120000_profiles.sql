@@ -35,7 +35,6 @@ create table public.profiles (
   days_per_week smallint not null check (days_per_week between 2 and 6),
   training_mode text not null check (training_mode in ('light', 'hard', 'mixed')),
   cardio text not null check (cardio in ('warmup', 'end', 'none')),
-  is_premium boolean not null default false,
   disclaimer_accepted_at timestamptz not null,
   onboarding_completed_at timestamptz,
   created_at timestamptz not null default now(),
@@ -59,7 +58,7 @@ for update to authenticated
 using ((select auth.uid()) = id)
 with check ((select auth.uid()) = id);
 
--- is_premium and service timestamps are not writable by the user.
+-- Service timestamps are not writable by the user.
 revoke all on public.profiles from anon, authenticated;
 grant select on public.profiles to authenticated;
 grant insert (

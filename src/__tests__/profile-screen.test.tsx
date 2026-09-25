@@ -55,7 +55,6 @@ const bundle: ProfileBundle = {
     days_per_week: 3,
     training_mode: 'light',
     cardio: 'warmup',
-    is_premium: false,
     disclaimer_accepted_at: '2026-01-01T00:00:00Z',
     onboarding_completed_at: '2026-01-01T00:00:00Z',
   },
